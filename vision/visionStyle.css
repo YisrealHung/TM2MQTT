@@ -1,0 +1,307 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    min-width: 600px;
+    max-width: 1280px;
+}
+
+header {
+    margin: 0.5%;
+    background: #eaeaea;
+}
+nav {
+    float: left;
+    width: 22.5%;
+    height: 650px;
+    margin: 0.5%;
+    background: #ff8282;
+}
+main {
+    float: left;
+    width: 52%;
+    height: 650px;
+    margin: 0.5%;
+    background: #5d5d5d;
+}
+aside {
+    float: left;
+    width: 22.5%;
+    height: 650px;
+    margin: 0.5%;
+    background: #F9F9F9;
+}
+input[type=text] {
+    width: 110%;
+    padding: 5px;
+    margin: 1%;
+}
+input[type=button] {
+    border: none;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    background: #333;
+    color: #FFF;
+    border-radius: 4px;
+}
+#mname {
+    padding: 5px 10px;
+}
+#messages {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    width:80%;
+    display: inline-block;
+    border:1px solid black;
+    max-height: 195px;
+    min-height: 195px;
+    overflow: scroll;
+}
+#messages span {
+    overflow-y: scroll;
+    overflow: scroll;
+}
+
+#label1 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #ED1C24;
+}
+#myProgress1 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #E1E1E1;
+}
+#myBar1 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #ED1C24;
+}
+
+#label2 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #FF7F27;
+}
+#myProgress2 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #FFF5D2;
+}
+#myBar2 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #FF7F27;
+}
+
+#label3 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #FFF200;
+}
+#myProgress3 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #E7F0D2;
+}
+#myBar3 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #FFF200;
+}
+
+#label4 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #22B14C;
+}
+#myProgress4 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #F0FAD1;
+}
+#myBar4 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #22B14C;
+}
+
+#label5 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #00A2E8;
+}
+#myProgress5 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #D5F0F7;
+}
+#myBar5 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #00A2E8;
+}
+
+#label6 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #3F48CC;
+}
+#myProgress6 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #DCE4EF;
+}
+#myBar6 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #3F48CC;
+}
+
+#label7 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #A349A4;
+}
+#myProgress7 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #E1DCF1;
+}
+#myBar7 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #A349A4;
+}
+
+#label8 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #880015;
+}
+#myProgress8 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #EDDCD3;
+}
+#myBar8 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #880015;
+}
+
+#label9 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #7F7F7F;
+}
+#myProgress9 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #E3E3E3;
+}
+#myBar9 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #7F7F7F;
+}
+
+#label10 {
+  text-align: left;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+}
+#myProgress10 {
+  position: relative;
+  margin-left: 3%;
+  width: 0pt;
+  height: 30px;
+  background-color: #EEEEEE;
+}
+#myBar10 {
+  position: absolute;
+  line-height: 2;
+  text-align: right;
+  color: white;
+  width: 0%;
+  height: 100%;
+  background-color: #000000;
+}
