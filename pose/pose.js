@@ -1,37 +1,35 @@
-let model, webcam, ctx, labelContainer, maxPredictions, position = -1, range, open = 0;
+let model, webcam, ctx, labelContainer, maxPredictions, position = -1, range, check = -1, lastrange = -1;
 var target_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 async function init() {
-    if (open == 0) {
-      open = 1;
-      const URL = document.getElementById("modelin").value;
-      const modelURL = URL + "model.json";
-      const metadataURL = URL + "metadata.json";
+    const URL = document.getElementById("modelin").value;
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
 
-      model = await tmPose.load(modelURL, metadataURL);
-      maxPredictions = model.getTotalClasses();
+    model = await tmPose.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalClasses();
 
-      const size = 640;
-      const flip = true;
+    const size = 640;
+    const flip = true;
 
-      webcam = new tmPose.Webcam(size, size, flip);
+    webcam = new tmPose.Webcam(size, size, flip);
 
 
-      await webcam.setup();
-      await webcam.play();
+    await webcam.setup();
+    await webcam.play();
 
-      window.requestAnimationFrame(loop);
+    window.requestAnimationFrame(loop);
 
-      const canvas = document.getElementById("canvas");
-      canvas.width = size; canvas.height = size;
-      ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("canvas");
+    canvas.width = size; canvas.height = size;
+    ctx = canvas.getContext("2d");
 
-      for (let i = 0; i < maxPredictions; i++) {
-          var tt = "myProgress" + (i+1);
-          var elem = document.getElementById(tt);
-          elem.style.width = 200 + 'pt';
-      }
+    for (let i = 0; i < maxPredictions; i++) {
+        var tt = "myProgress" + (i+1);
+        var elem = document.getElementById(tt);
+        elem.style.width = 200 + 'pt';
     }
+
 }
 
 async function loop() {
@@ -50,6 +48,7 @@ async function predict() {
         if (range < prediction[i].probability.toFixed(2)) {
             range = prediction[i].probability.toFixed(2);
             position = i;
+            lastrange = range;
         }
         var elem = document.getElementById("myBar"+target_list[i]);
         elem.style.width = prediction[i].probability.toFixed(2)*100 + '%';
@@ -57,10 +56,15 @@ async function predict() {
         document.getElementById("label"+target_list[i]).innerHTML= prediction[i].className;
     }
     drawPose(pose);
-    try {
-        publish(String(position + 1));
-    } catch (error) {
-        console.error(error);
+    if (lastrange > 0.7) {
+      if (position != check) {
+          try {
+              publish(String(position + 1));
+              check = position;
+          } catch (error) {
+              // pass
+          }
+      }
     }
     range = -1;
 }
@@ -125,7 +129,7 @@ function onConnectionLost(responseObject) {
 
 // Called when a message arrives
 function onMessageArrived(message) {
-    console.log("onMessageArrived: " + message.payloadString);
+    // console.log("onMessageArrived: " + message.payloadString);
     document.getElementById("messages").innerHTML += '<span>' + message.destinationName + ' : ' + message.payloadString + '</span><br/>';
     updateScroll(); // Scroll to bottom of window
 }
