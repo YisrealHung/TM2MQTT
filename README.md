@@ -1,5 +1,5 @@
 # TM2MQTT
-結合Teachable Machine 與MQTT 功能，將訓練好的模型連結與MQTT 相關資訊輸入後，可將影像推論結果轉換成MQTT Topic 並發佈訊息。
+結合Teachable Machine 與MQTT 功能，將訓練好的模型連結與MQTT 相關資訊輸入後，可將影像推論結果轉換成訊息並發佈至MQTT Topic。
 <p align="center">
   <img src="https://github.com/YisrealHung/TM2MQTT/blob/main/album/00.png" width="800"/>
 </p>
